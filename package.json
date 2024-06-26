@@ -1,0 +1,25 @@
+{
+  "name": "alt-vultr",
+  "version": "0.0.1-rc.0",
+  "description": "Ergonomic and performant library for interacting with the Vultr API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "swc --delete-dir-on-start -s -d dist index.mts",
+    "start": "pnpm run build && node dist/index.js",
+    "debug": "pnpm run build && node --inspect dist/index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "skooch",
+  "devDependencies": {
+    "@redocly/openapi-core": "^1.16.0",
+    "@swc/cli": "^0.3.14",
+    "@swc/core": "^1.6.5",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.14.9",
+    "got": "^14.4.1",
+    "openapi-typescript": "^7.0.0",
+    "typescript": "^5.5.2"
+  },
+  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74"
+}
