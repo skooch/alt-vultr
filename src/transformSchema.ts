@@ -8,14 +8,16 @@ function transformSchema() {
     skipAddingFilesFromTsConfig: true,
   });
 
+  const path = `${process.env.PWD ?? "."}/vultr-types/vultr-schema.d.ts`;
+
+  project.addSourceFileAtPath(path);
+
   const schemaAst = () => {
     try {
-      return project.getSourceFileOrThrow(
-        `${process.env.PWD ?? "."}/vultr-types/vultr-schema.d.ts`,
-      );
+      return project.getSourceFileOrThrow(path);
     } catch (e) {
       throw new Error(
-        `Failed to get Vultr schema at ${process.env.PWD ?? "."}/vultr-types/vultr-schema.d.ts: `,
+        `Failed to get Vultr schema at ${path}/vultr-types/vultr-schema.d.ts: `,
         e ?? "",
       );
     }
