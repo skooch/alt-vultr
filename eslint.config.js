@@ -1,4 +1,3 @@
-// eslint.config.js
 import js from "@eslint/js";
 import ts from "typescript-eslint";
 import prettier from 'eslint-plugin-prettier/recommended';
@@ -13,6 +12,13 @@ export default [
       parserOptions: {
         project: true
       }
+    }
+  },
+  {
+    prettierOptions: {
+      experimentalTernaries: true,
+      semi: false,
+      singleQuote: true
     }
   },
   {
